@@ -5,7 +5,8 @@
   "scripts": {
     "scraper:dev": "pnpm --filter scraper dev",
     "scraper:build": "pnpm --filter scraper build",
-    "scraper:start": "pnpm --filter scraper start"
+    "scraper:start": "pnpm --filter scraper start",
+    "tg-bot:dev": "pnpm --filter tg-bot dev"
   },
   "devDependencies": {
     "@biomejs/biome": "2.1.2",
