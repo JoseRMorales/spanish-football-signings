@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "../..",
+    "lib": [
+      "ESNext",
+    ]
+  },
+  "include": [
+    "src",
+    "../../packages/shared-types/src"
+  ],
+}
