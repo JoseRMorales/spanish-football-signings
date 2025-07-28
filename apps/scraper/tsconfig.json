@@ -9,6 +9,7 @@
   },
   "include": [
     "src",
-    "../../packages/shared-types/src"
+    "../../packages/shared-types/src",
+    "../../packages/shared-bot/src"
   ],
 }

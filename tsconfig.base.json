@@ -24,6 +24,9 @@
     "paths": {
       "@spanish-football-signings/shared-types": [
         "packages/shared-types/src/index.ts"
+      ],
+      "@spanish-football-signings/shared-bot": [
+        "packages/shared-bot/src/index.ts"
       ]
     }
   }

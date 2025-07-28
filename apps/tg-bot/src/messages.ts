@@ -1,7 +1,7 @@
+import { db } from "@spanish-football-signings/shared-bot";
 import type { User } from "@spanish-football-signings/shared-types";
 import type { Telegraf } from "telegraf";
 import { TelegramError } from "telegraf";
-import db from "./db";
 
 const getAllUsers = db.prepare("SELECT id FROM users");
 const removeUser = db.prepare("DELETE FROM users WHERE id = ?");

@@ -1,7 +1,7 @@
 import type { Signing } from "@spanish-football-signings/shared-types";
 import bot from "./bot";
 import "./commands";
-import db from "./db";
+import { db } from "@spanish-football-signings/shared-bot";
 import { broadcastMessage } from "./messages";
 
 const rate = 5 * 60 * 1000 + 15000;

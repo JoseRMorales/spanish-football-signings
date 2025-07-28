@@ -1,10 +1,7 @@
 import crypto from "node:crypto";
-import { DatabaseSync } from "node:sqlite";
+import { db } from "@spanish-football-signings/shared-bot";
 import { getTransfers } from "./lib/scraper.js";
 
-const DB_PATH = process.env.DB_PATH || "transfers.db";
-
-const db = new DatabaseSync(DB_PATH);
 const rate = 5 * 60 * 1000;
 
 db.exec(`

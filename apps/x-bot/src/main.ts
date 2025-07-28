@@ -1,17 +1,8 @@
+import { db } from "@spanish-football-signings/shared-bot";
 import type { Signing } from "@spanish-football-signings/shared-types";
 import bot from "./bot";
-import db from "./db";
 
 const rate = 5 * 60 * 1000 + 30000;
-
-db.exec(`
-  CREATE TABLE IF NOT EXISTS users (
-    id INTEGER PRIMARY KEY,
-    first_name TEXT,
-    username TEXT,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-  )
-`);
 
 export async function broadcastTransferUpdate(transfer: Signing) {
 	const message = `

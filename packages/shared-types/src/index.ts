@@ -1,2 +1,2 @@
-export * from "./signing.types.js";
-export * from "./users.types.js";
+export * from "./signing.types";
+export * from "./users.types";

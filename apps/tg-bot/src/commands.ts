@@ -1,5 +1,5 @@
+import { db } from "@spanish-football-signings/shared-bot";
 import bot from "./bot";
-import db from "./db";
 import { broadcastMessage } from "./messages";
 
 const TG_ADMIN_ID = process.env.TG_ADMIN_ID || "";

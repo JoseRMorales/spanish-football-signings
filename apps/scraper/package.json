@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "pnpx tsx --experimental-sqlite --env-file ../../.env src/main.ts",
     "build": "pnpx tsc",
-    "start": "node dist/main.js"
+    "start": "node --experimental-sqlite --env-file ../../.env dist/main.js"
   },
   "dependencies": {
     "playwright": "^1.54.1"
