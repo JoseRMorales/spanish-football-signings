@@ -2,19 +2,13 @@
   "name": "spanish-football-signings",
   "version": "0.0.0",
   "license": "MIT",
+  "packageManager": "pnpm@10.13.1",
   "scripts": {
-    "scraper:dev": "pnpm --filter scraper dev",
-    "scraper:build": "pnpm --filter scraper build",
-    "scraper:start": "pnpm --filter scraper start",
-    "tg-bot:dev": "pnpm --filter tg-bot dev",
-    "x-bot:dev": "pnpm --filter x-bot dev"
+    "dev": "turbo dev"
   },
   "devDependencies": {
     "@biomejs/biome": "2.1.2",
-    "@types/amqplib": "^0.10.7",
-    "@types/node": "^24.1.0",
-    "ts-node": "^10.9.2",
-    "tslib": "^2.8.1",
+    "turbo": "^2.5.5",
     "typescript": "^5.8.3"
   }
 }

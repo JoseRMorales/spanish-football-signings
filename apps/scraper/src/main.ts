@@ -1,5 +1,5 @@
 import crypto from "node:crypto";
-import { db } from "@spanish-football-signings/shared-bot";
+import { db } from "@repo/db";
 import { getTransfers } from "./lib/scraper.js";
 
 const rate = 5 * 60 * 1000;

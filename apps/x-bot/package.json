@@ -1,15 +1,19 @@
 {
-  "name": "x-bot",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@spanish-football-signings/x-bot",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "pnpx tsx --experimental-sqlite --env-file ../../.env src/main.ts"
+    "dev": "pnpx tsx --experimental-sqlite --env-file ../../.env src/main.ts",
+    "build": "tsc",
+    "start": "node --experimental-sqlite --env-file ../../.env dist/main.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "twitter-api-v2": "^1.24.0"
+    "twitter-api-v2": "^1.24.0",
+    "@repo/db": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/ts-config": "workspace:*",
+    "@repo/shared-types": "workspace:*",
+    "@types/node": "^24.1.0",
+    "typescript": "latest"
   }
 }

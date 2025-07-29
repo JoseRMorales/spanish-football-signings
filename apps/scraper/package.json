@@ -4,10 +4,17 @@
   "type": "module",
   "scripts": {
     "dev": "pnpx tsx --experimental-sqlite --env-file ../../.env src/main.ts",
-    "build": "pnpx tsc",
+    "build": "tsc",
     "start": "node --experimental-sqlite --env-file ../../.env dist/main.js"
   },
   "dependencies": {
+    "@repo/db": "workspace:*",
     "playwright": "^1.54.1"
+  },
+  "devDependencies": {
+    "@repo/ts-config": "workspace:*",
+    "@repo/shared-types": "workspace:*",
+    "@types/node": "^24.1.0",
+    "typescript": "latest"
   }
 }

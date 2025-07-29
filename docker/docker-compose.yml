@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  scraper:
+    build:
+      context: ..
+      dockerfile: ./apps/scraper/Dockerfile
+    container_name: spanish-football-scraper
+    env_file:
+      - ../.env
+    volumes:
+      - ../transfers.db:/app/transfers.db:rw
+    restart: unless-stopped
+    networks:
+      - spanish-football-net
+
+  tg-bot:
+    build:
+      context: ..
+      dockerfile: ./apps/tg-bot/Dockerfile
+    container_name: spanish-football-tg-bot
+    env_file:
+      - ../.env
+    volumes:
+      - ../transfers.db:/app/transfers.db:rw
+    restart: unless-stopped
+    networks:
+      - spanish-football-net
+
+  x-bot:
+    build:
+      context: ..
+      dockerfile: ./apps/x-bot/Dockerfile
+    container_name: spanish-football-x-bot
+    env_file:
+      - ../.env
+    volumes:
+      - ../transfers.db:/app/transfers.db:rw
+    restart: unless-stopped
+    networks:
+      - spanish-football-net
+
+networks:
+  spanish-football-net:
+    driver: bridge

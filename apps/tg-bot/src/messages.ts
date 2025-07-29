@@ -1,5 +1,5 @@
-import { db } from "@spanish-football-signings/shared-bot";
-import type { User } from "@spanish-football-signings/shared-types";
+import { db } from "@repo/db";
+import type { User } from "@repo/shared-types";
 import type { Telegraf } from "telegraf";
 import { TelegramError } from "telegraf";
 

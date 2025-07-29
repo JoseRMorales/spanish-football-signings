@@ -1,4 +1,4 @@
-import { db } from "@spanish-football-signings/shared-bot";
+import { db } from "@repo/db";
 import bot from "./bot";
 import { broadcastMessage } from "./messages";
 

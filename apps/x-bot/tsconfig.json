@@ -1,14 +1,12 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "@repo/ts-config/base.json",
   "compilerOptions": {
-    "baseUrl": "../..",
-    "lib": [
-      "ESNext",
-    ]
+    "outDir": "./dist",
   },
-  "include": [
-    "src",
-    "../../packages/shared-types/src",
-    "../../packages/shared-bot/src"
+  "exclude": [
+    "node_modules"
   ],
+  "include": [
+    "src"
+  ]
 }

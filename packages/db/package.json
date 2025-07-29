@@ -1,0 +1,15 @@
+{
+  "name": "@repo/db",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch --preserveWatchOutput"
+  },
+  "devDependencies": {
+    "@repo/ts-config": "workspace:*",
+    "@types/node": "^24.1.0",
+    "typescript": "latest"
+  }
+}

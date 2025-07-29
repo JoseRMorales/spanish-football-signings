@@ -1,4 +1,4 @@
-import { db } from "@spanish-football-signings/shared-bot";
+import { db } from "@repo/db";
 import { Telegraf } from "telegraf";
 
 const BOT_TOKEN = process.env.BOT_TOKEN || "";

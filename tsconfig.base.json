@@ -1,33 +1,14 @@
 {
   "compilerOptions": {
-    "composite": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "importHelpers": true,
-    "isolatedModules": true,
-    "lib": [
-      "es2022"
-    ],
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
+    "esModuleInterop": true,
     "skipLibCheck": true,
-    "strict": true,
     "target": "es2022",
-    "customConditions": [
-      "development"
-    ],
-    "paths": {
-      "@spanish-football-signings/shared-types": [
-        "packages/shared-types/src/index.ts"
-      ],
-      "@spanish-football-signings/shared-bot": [
-        "packages/shared-bot/src/index.ts"
-      ]
-    }
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "module": "NodeNext",
   }
 }
