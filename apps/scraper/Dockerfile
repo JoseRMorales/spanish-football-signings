@@ -37,12 +37,13 @@ ARG APP_DIRNAME
 RUN groupadd --system --gid 1002 signings-group
 RUN useradd --system --uid 1002 --gid 1002 --create-home signings-user
 
-WORKDIR /app
-COPY --from=builder --chown=signings-user:signings-group /app .
-
 USER signings-user
 
-WORKDIR /app/apps/${APP_DIRNAME}
+WORKDIR /app
+
 ENV NODE_ENV=production
+
+COPY --from=builder --chown=signings-user:signings-group /app .
+WORKDIR /app/apps/${APP_DIRNAME}
 
 CMD ["node", "--experimental-sqlite", "dist/main.js"]
