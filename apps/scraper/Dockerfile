@@ -34,8 +34,8 @@ RUN turbo build --filter=${PROJECT}
 FROM mcr.microsoft.com/playwright:v1.54.1-noble AS runner
 ARG APP_DIRNAME
 
-RUN groupadd --system --gid 1002 apps-group
-RUN useradd --system --uid 1002 --gid apps-group --create-home scraper-user
+RUN groupadd --system --gid 1002 signings-group
+RUN useradd --system --uid 1002 --gid 1002 --create-home signings-user
 
 WORKDIR /app
 COPY --from=builder --chown=scraper-user:apps-group /app .

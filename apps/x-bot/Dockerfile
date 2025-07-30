@@ -34,10 +34,10 @@ RUN turbo build --filter=${PROJECT}
 FROM base AS runner
 ARG APP_DIRNAME
 
-RUN addgroup --system --gid 1002 apps-group
-RUN adduser --system --uid 1002 x-bot-user
-RUN adduser x-bot-user apps-group
-USER x-bot-user
+RUN addgroup --system --gid 1002 signings-group
+RUN adduser --system --uid 1002 signings-user
+RUN adduser signings-user signings-group
+USER signings-user
 
 WORKDIR /app
 
