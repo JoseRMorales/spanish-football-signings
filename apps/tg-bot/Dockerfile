@@ -43,7 +43,7 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
-COPY --from=builder --chown=tg-bot-user:apps-group /app .
+COPY --from=builder --chown=signings-user:signings-group /app .
 WORKDIR /app/apps/${APP_DIRNAME}
 
 CMD ["node", "--experimental-sqlite", "dist/main.js"]

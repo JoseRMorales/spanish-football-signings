@@ -38,7 +38,7 @@ RUN groupadd --system --gid 1002 signings-group
 RUN useradd --system --uid 1002 --gid 1002 --create-home signings-user
 
 WORKDIR /app
-COPY --from=builder --chown=scraper-user:apps-group /app .
+COPY --from=builder --chown=signings-user:signings-group /app .
 
 USER scraper-user
 
