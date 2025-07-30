@@ -40,7 +40,7 @@ RUN useradd --system --uid 1002 --gid 1002 --create-home signings-user
 WORKDIR /app
 COPY --from=builder --chown=signings-user:signings-group /app .
 
-USER scraper-user
+USER signings-user
 
 WORKDIR /app/apps/${APP_DIRNAME}
 ENV NODE_ENV=production
