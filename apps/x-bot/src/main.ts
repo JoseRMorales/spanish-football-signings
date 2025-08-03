@@ -1,6 +1,11 @@
 import { db } from "@repo/db";
 import type { Signing } from "@repo/shared-types";
+import type { SupportedLang } from "@repo/strings";
+import { getTranslation } from "@repo/strings";
 import bot from "./bot";
+
+const LANGUAGE = (process.env.LANGUAGE || "en") as SupportedLang;
+const t = getTranslation(LANGUAGE);
 
 const rate = 5 * 60 * 1000 + 30000;
 
@@ -11,14 +16,19 @@ export async function broadcastTransferUpdate(
 	transfer: Signing,
 ): Promise<void> {
 	const message = `
-🔄 **Transfer Update**
+${t("transfer")}
 
-👤 Player: ${transfer.player}
-📅 Date: ${transfer.date}
-🏷️ Type: ${transfer.type}
-🏟️ From: ${transfer.origin}
-🏟️ To: ${transfer.destination}
-  `;
+${t("player")}: ${transfer.player}
+${t("date")}: ${transfer.date}
+${t("type")}: ${transfer.type}
+${t("origin")}: ${transfer.origin}
+${t("destination")}: ${transfer.destination}
+
+${t("inscriptions")} ${t("spanishLeague")} #${transfer.destination.replace(
+		/\s+/g,
+		"",
+	)}
+`;
 
 	try {
 		await bot.v2.tweet(message);

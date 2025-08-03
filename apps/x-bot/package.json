@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "twitter-api-v2": "^1.24.0",
-    "@repo/db": "workspace:*"
+    "@repo/db": "workspace:*",
+    "@repo/strings": "workspace:*"
   },
   "devDependencies": {
     "@repo/ts-config": "workspace:*",
