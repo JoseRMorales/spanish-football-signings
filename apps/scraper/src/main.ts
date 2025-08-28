@@ -25,19 +25,26 @@ function hashId(name: string, date: string): string {
 }
 
 async function insertTransfers() {
-	const transfers = await getTransfers();
-	console.log("transfers", transfers);
-	const insert = db.prepare(
-		"INSERT OR IGNORE INTO transfers (id, player, date, type, origin, destination) VALUES (?, ?, ?, ?, ?, ?)",
-	);
+	try {
+		const transfers = await getTransfers();
+		console.log("transfers", transfers);
+		const insert = db.prepare(
+			"INSERT OR IGNORE INTO transfers (id, player, date, type, origin, destination) VALUES (?, ?, ?, ?, ?, ?)",
+		);
 
-	for (const t of transfers) {
-		const id = hashId(t.player, t.date);
-		insert.run(id, t.player, t.date, t.type, t.origin, t.destination);
+		for (const t of transfers) {
+			const id = hashId(t.player, t.date);
+			insert.run(id, t.player, t.date, t.type, t.origin, t.destination);
+		}
+		console.log(
+			`[${new Date().toISOString()}] Inserted ${transfers.length} transfers`,
+		);
+	} catch (error) {
+		console.error(
+			`[${new Date().toISOString()}] Error inserting transfers:`,
+			error,
+		);
 	}
-	console.log(
-		`[${new Date().toISOString()}] Inserted ${transfers.length} transfers`,
-	);
 }
 
 insertTransfers();
